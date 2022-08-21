@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1118C628B292F4003C975E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1118C528B292F4003C975E /* Images.xcassets */; };
 		3A83C91D28B20C01005CCCD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */; };
 		3A83C91F28B20C01005CCCD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */; };
 		3A83C92128B20C01005CCCD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C92028B20C01005CCCD9 /* ViewController.swift */; };
 		3A83C92428B20C01005CCCD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92228B20C01005CCCD9 /* Main.storyboard */; };
 		3A83C92928B20C03005CCCD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */; };
 		3A83C93228B2161D005CCCD9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A83C93128B2161D005CCCD9 /* SnapKit */; };
-		3A83C93428B22BC7005CCCD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C93328B22BC7005CCCD9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1118C528B292F4003C975E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A83C91928B20C01005CCCD9 /* HW12-Khrapov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW12-Khrapov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		3A83C92328B20C01005CCCD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A83C92828B20C03005CCCD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A83C92A28B20C03005CCCD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A83C93328B22BC7005CCCD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Домашние работы/HW11-Khrapov/HW11-Khrapov/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +39,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1118BE28B29032003C975E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A1118C528B292F4003C975E /* Images.xcassets */,
+				3A1118C028B29044003C975E /* Storyboards */,
+				3A1118BF28B2903B003C975E /* Configs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A1118BF28B2903B003C975E /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C92A28B20C03005CCCD9 /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		3A1118C028B29044003C975E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C92228B20C01005CCCD9 /* Main.storyboard */,
+				3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3A1118C128B29050003C975E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3A1118C328B2905D003C975E /* Scenes */,
+				3A1118C228B29059003C975E /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3A1118C228B29059003C975E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */,
+				3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3A1118C328B2905D003C975E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C92028B20C01005CCCD9 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		3A83C91028B20C01005CCCD9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +111,8 @@
 		3A83C91B28B20C01005CCCD9 /* HW12-Khrapov */ = {
 			isa = PBXGroup;
 			children = (
-				3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */,
-				3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */,
-				3A83C92028B20C01005CCCD9 /* ViewController.swift */,
-				3A83C92228B20C01005CCCD9 /* Main.storyboard */,
-				3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */,
-				3A83C93328B22BC7005CCCD9 /* Assets.xcassets */,
-				3A83C92A28B20C03005CCCD9 /* Info.plist */,
+				3A1118C128B29050003C975E /* Sources */,
+				3A1118BE28B29032003C975E /* Resources */,
 			);
 			path = "HW12-Khrapov";
 			sourceTree = "<group>";
@@ -133,8 +181,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1118C628B292F4003C975E /* Images.xcassets in Resources */,
 				3A83C92928B20C03005CCCD9 /* LaunchScreen.storyboard in Resources */,
-				3A83C93428B22BC7005CCCD9 /* Assets.xcassets in Resources */,
 				3A83C92428B20C01005CCCD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,11 +341,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = XPDQ86R58G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW12-Khrapov/Info.plist";
+				INFOPLIST_FILE = "HW12-Khrapov/Resources/Configs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,11 +372,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = XPDQ86R58G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW12-Khrapov/Info.plist";
+				INFOPLIST_FILE = "HW12-Khrapov/Resources/Configs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
