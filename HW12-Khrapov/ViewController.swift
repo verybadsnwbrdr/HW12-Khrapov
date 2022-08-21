@@ -9,21 +9,28 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - CALayers
+    private var circleLayer = CAShapeLayer()
+    private var progressLayer = CAShapeLayer()
+    
     // MARK: - Elements
     
     private var timer: Timer?
-    private var workTime = 10
+    private var workTime = 25
     private var relaxTime = 5
-    private var currentTime = 0
+    private var currentTime: Double = 0
+    
     private var isActive = false
     private var isWorkTime = true
     
+    private var workColor: UIColor = .red
+    private var relaxColor: UIColor = .systemGreen
+    
     private lazy var timerLabel: UILabel = {
         let timerLabel = UILabel()
-        timerLabel.text = "00:\(correctTimeDisp(workTime))"
+        timerLabel.text = "00:\(correctTimeDisp(Double(workTime)))"
         timerLabel.font = UIFont.systemFont(ofSize: 50, weight: .regular)
-        timerLabel.textColor = .white
         return timerLabel
     }()
     
@@ -31,8 +38,6 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(startStopPressed), for: .touchUpInside)
         button.setImage(UIImage(named: "play"), for: .normal)
-        
-        button.tintColor = .white
         return button
     }()
     
@@ -46,27 +51,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView(color: .systemYellow)
-        currentTime = workTime
+        setupView()
+        currentTime = Double(workTime)
         setupHierarchy()
+        setupItemsColor(color: workColor)
         setupLayout()
     }
     
     // MARK: - Setup
     
     private func initTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
-    private func correctTimeDisp(_ time: Int) -> String {
+    private func correctTimeDisp(_ time: Double) -> String {
+        let time = Int(time.rounded())
         return time >= 10 ? String(time) : "0" + String(time)
     }
     
-    private func setupView(color: UIColor) {
-        view.backgroundColor = color
+    private func setupView() {
+        view.backgroundColor = .white
+    }
+    
+    private func setupItemsColor(color: UIColor) {
+        startStopButton.tintColor = color
+        timerLabel.textColor = color
     }
     
     private func setupHierarchy() {
+        createShapeLayer()
+        progressLayer.speed = 0
+        progressAnimation(duration: TimeInterval(currentTime))
         view.addSubview(stack)
     }
     
@@ -76,45 +91,89 @@ class ViewController: UIViewController {
         }
     }
     
+    private func createShapeLayer() {
+        let center = view.center
+        let path = UIBezierPath(arcCenter: center, radius: 150, startAngle: -Double.pi / 2, endAngle: 3 * Double.pi / 2, clockwise: true)
+        
+        circleLayer.path = path.cgPath
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.strokeColor = UIColor.white.cgColor
+        circleLayer.lineWidth = 5
+        
+        circleLayer.shadowColor = UIColor.black.cgColor
+        circleLayer.shadowOpacity = 0.4
+        circleLayer.shadowOffset = .zero
+        circleLayer.shadowRadius = 8
+        circleLayer.shouldRasterize = true
+        circleLayer.rasterizationScale = UIScreen.main.scale
+        
+        progressLayer.path = path.cgPath
+        progressLayer.fillColor = UIColor.clear.cgColor
+        progressLayer.strokeColor = UIColor.systemRed.cgColor
+        progressLayer.lineWidth = 5
+        progressLayer.strokeEnd = 0
+        progressLayer.lineCap = CAShapeLayerLineCap.round
+        
+        view.layer.addSublayer(circleLayer)
+        view.layer.addSublayer(progressLayer)
+    }
+    
+    private func progressAnimation(duration: TimeInterval) {
+        let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        circularProgressAnimation.toValue = 1
+        circularProgressAnimation.duration = CFTimeInterval(duration)
+        circularProgressAnimation.fillMode = CAMediaTimingFillMode.forwards
+        circularProgressAnimation.isRemovedOnCompletion = false
+        progressLayer.add(circularProgressAnimation, forKey: "progressAnimation")
+    }
+    
+    private func pauseAnimation() {
+        let pausedTime = progressLayer.convertTime(CACurrentMediaTime(), from: nil)
+        progressLayer.speed = 0.0
+        progressLayer.timeOffset = pausedTime
+    }
+    
+    private func resumeAnimation() {
+        let pausedTime = progressLayer.timeOffset
+        progressLayer.speed = 1.0
+        progressLayer.timeOffset = 0.0
+        progressLayer.beginTime = 0
+        let timeSincePause = progressLayer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        progressLayer.beginTime = timeSincePause
+    }
+    
     // MARK: - Actions
     
     @objc private func startStopPressed() {
         if isActive {
             isActive = false
             startStopButton.setImage(UIImage(named: "play"), for: .normal)
+            pauseAnimation()
             timer?.invalidate()
         } else {
             isActive = true
             startStopButton.setImage(UIImage(named: "stop"), for: .normal)
+            resumeAnimation()
             initTimer()
         }
     }
     
     @objc func fireTimer() {
-        currentTime -= 1
+        currentTime -= 0.001
         timerLabel.text = "00:\(correctTimeDisp(currentTime))"
         
         if currentTime <= 0 && isWorkTime == true {
             isWorkTime = false
-            currentTime = relaxTime
-            setupView(color: .systemGreen)
+            currentTime = Double(relaxTime)
+            setupItemsColor(color: relaxColor)
+            progressLayer.strokeColor = relaxColor.cgColor
+            progressAnimation(duration: TimeInterval(currentTime))
         } else if currentTime <= 0 && isWorkTime == false {
             isWorkTime = true
-            currentTime = workTime
-            setupView(color: .systemYellow)
+            currentTime = Double(workTime)
+            setupItemsColor(color: workColor)
+            progressLayer.strokeColor = workColor.cgColor
+            progressAnimation(duration: TimeInterval(currentTime))
         }
     }
 }
-
-
-//        view.addSubview(timerLabel)
-//        view.addSubview(startStopButton)
-
-//        timerLabel.snp.makeConstraints { make in
-//            make.center.equalTo(view)
-//        }
-//
-//        startStopButton.snp.makeConstraints { make in
-//            make.centerX.equalTo(view)
-//            make.top.equalTo(timerLabel.snp.bottom).offset(30)
-//        }
