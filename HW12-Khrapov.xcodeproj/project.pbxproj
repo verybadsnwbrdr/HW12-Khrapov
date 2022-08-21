@@ -11,8 +11,9 @@
 		3A83C91F28B20C01005CCCD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */; };
 		3A83C92128B20C01005CCCD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C92028B20C01005CCCD9 /* ViewController.swift */; };
 		3A83C92428B20C01005CCCD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92228B20C01005CCCD9 /* Main.storyboard */; };
-		3A83C92628B20C03005CCCD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92528B20C03005CCCD9 /* Assets.xcassets */; };
 		3A83C92928B20C03005CCCD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */; };
+		3A83C93228B2161D005CCCD9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A83C93128B2161D005CCCD9 /* SnapKit */; };
+		3A83C93428B22BC7005CCCD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C93328B22BC7005CCCD9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +22,9 @@
 		3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A83C92028B20C01005CCCD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A83C92328B20C01005CCCD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3A83C92528B20C03005CCCD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A83C92828B20C03005CCCD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A83C92A28B20C03005CCCD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A83C93328B22BC7005CCCD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Домашние работы/HW11-Khrapov/HW11-Khrapov/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A83C93228B2161D005CCCD9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +62,8 @@
 				3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */,
 				3A83C92028B20C01005CCCD9 /* ViewController.swift */,
 				3A83C92228B20C01005CCCD9 /* Main.storyboard */,
-				3A83C92528B20C03005CCCD9 /* Assets.xcassets */,
 				3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */,
+				3A83C93328B22BC7005CCCD9 /* Assets.xcassets */,
 				3A83C92A28B20C03005CCCD9 /* Info.plist */,
 			);
 			path = "HW12-Khrapov";
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "HW12-Khrapov";
+			packageProductDependencies = (
+				3A83C93128B2161D005CCCD9 /* SnapKit */,
+			);
 			productName = "HW12-Khrapov";
 			productReference = 3A83C91928B20C01005CCCD9 /* HW12-Khrapov.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 3A83C91028B20C01005CCCD9;
+			packageReferences = (
+				3A83C93028B2161D005CCCD9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3A83C91A28B20C01005CCCD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A83C92928B20C03005CCCD9 /* LaunchScreen.storyboard in Resources */,
-				3A83C92628B20C03005CCCD9 /* Assets.xcassets in Resources */,
+				3A83C93428B22BC7005CCCD9 /* Assets.xcassets in Resources */,
 				3A83C92428B20C01005CCCD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A83C93028B2161D005CCCD9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A83C93128B2161D005CCCD9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A83C93028B2161D005CCCD9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A83C91128B20C01005CCCD9 /* Project object */;
 }
