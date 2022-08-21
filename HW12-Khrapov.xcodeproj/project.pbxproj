@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1118C428B29078003C975E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A83C91928B20C01005CCCD9 /* HW12-Khrapov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW12-Khrapov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +40,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1118BE28B29032003C975E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A1118C428B29078003C975E /* Assets.xcassets */,
+				3A1118C028B29044003C975E /* Storyboards */,
+				3A1118BF28B2903B003C975E /* Configs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A1118BF28B2903B003C975E /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C92A28B20C03005CCCD9 /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		3A1118C028B29044003C975E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C92228B20C01005CCCD9 /* Main.storyboard */,
+				3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3A1118C128B29050003C975E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3A1118C328B2905D003C975E /* Scenes */,
+				3A1118C228B29059003C975E /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3A1118C228B29059003C975E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */,
+				3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3A1118C328B2905D003C975E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3A83C92028B20C01005CCCD9 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		3A83C91028B20C01005CCCD9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +112,9 @@
 		3A83C91B28B20C01005CCCD9 /* HW12-Khrapov */ = {
 			isa = PBXGroup;
 			children = (
-				3A83C91C28B20C01005CCCD9 /* AppDelegate.swift */,
-				3A83C91E28B20C01005CCCD9 /* SceneDelegate.swift */,
-				3A83C92028B20C01005CCCD9 /* ViewController.swift */,
-				3A83C92228B20C01005CCCD9 /* Main.storyboard */,
-				3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */,
+				3A1118C128B29050003C975E /* Sources */,
+				3A1118BE28B29032003C975E /* Resources */,
 				3A83C93328B22BC7005CCCD9 /* Assets.xcassets */,
-				3A83C92A28B20C03005CCCD9 /* Info.plist */,
 			);
 			path = "HW12-Khrapov";
 			sourceTree = "<group>";
@@ -297,7 +347,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPDQ86R58G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW12-Khrapov/Info.plist";
+				INFOPLIST_FILE = "HW12-Khrapov/Resources/Configs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -326,7 +376,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPDQ86R58G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW12-Khrapov/Info.plist";
+				INFOPLIST_FILE = "HW12-Khrapov/Resources/Configs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
