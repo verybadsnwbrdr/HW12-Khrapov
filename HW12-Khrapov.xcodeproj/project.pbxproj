@@ -13,7 +13,7 @@
 		3A83C92128B20C01005CCCD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C92028B20C01005CCCD9 /* ViewController.swift */; };
 		3A83C92428B20C01005CCCD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92228B20C01005CCCD9 /* Main.storyboard */; };
 		3A83C92928B20C03005CCCD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A83C92728B20C03005CCCD9 /* LaunchScreen.storyboard */; };
-		3A83C93228B2161D005CCCD9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A83C93128B2161D005CCCD9 /* SnapKit */; };
+		3AF833B128B5052B0019BA30 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF833B028B5052B0019BA30 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A83C93228B2161D005CCCD9 /* SnapKit in Frameworks */,
+				3AF833B128B5052B0019BA30 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +134,7 @@
 			);
 			name = "HW12-Khrapov";
 			packageProductDependencies = (
-				3A83C93128B2161D005CCCD9 /* SnapKit */,
+				3AF833B028B5052B0019BA30 /* SnapKit */,
 			);
 			productName = "HW12-Khrapov";
 			productReference = 3A83C91928B20C01005CCCD9 /* HW12-Khrapov.app */;
@@ -165,7 +165,7 @@
 			);
 			mainGroup = 3A83C91028B20C01005CCCD9;
 			packageReferences = (
-				3A83C93028B2161D005CCCD9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3AF833AF28B5052B0019BA30 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 3A83C91A28B20C01005CCCD9 /* Products */;
 			projectDirPath = "";
@@ -422,7 +422,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A83C93028B2161D005CCCD9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		3AF833AF28B5052B0019BA30 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -433,9 +433,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A83C93128B2161D005CCCD9 /* SnapKit */ = {
+		3AF833B028B5052B0019BA30 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A83C93028B2161D005CCCD9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 3AF833AF28B5052B0019BA30 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
