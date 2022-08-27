@@ -11,12 +11,13 @@ import SnapKit
 class ViewController: UIViewController {
     
     // MARK: - CALayers
+    
     private var circleLayer = CAShapeLayer()
     private var progressLayer = CAShapeLayer()
     
     // MARK: - Elements
     
-    private var timer: Timer?
+    private var timer = Timer()
     private var workTime = 25
     private var relaxTime = 5
     private var currentTime: Double = 0
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
     
     private lazy var timerLabel: UILabel = {
         let timerLabel = UILabel()
-        timerLabel.text = "00:\(correctTimeDisp(Double(workTime)))"
+        timerLabel.text = correctTimeDisp(Double(workTime))
         timerLabel.font = UIFont.systemFont(ofSize: 50, weight: .regular)
         return timerLabel
     }()
@@ -65,8 +66,10 @@ class ViewController: UIViewController {
     }
     
     private func correctTimeDisp(_ time: Double) -> String {
-        let time = Int(time.rounded())
-        return time >= 10 ? String(time) : "0" + String(time)
+        let time = Int(time)
+        let minutes = time / 60
+        let seconds = time % 60
+        return "\(minutes / 10)\(minutes % 10):\(seconds / 10)\(seconds % 10)"
     }
     
     private func setupView() {
@@ -149,7 +152,7 @@ class ViewController: UIViewController {
             isActive = false
             startStopButton.setImage(UIImage(named: "play"), for: .normal)
             pauseAnimation()
-            timer?.invalidate()
+            timer.invalidate()
         } else {
             isActive = true
             startStopButton.setImage(UIImage(named: "stop"), for: .normal)
@@ -160,20 +163,22 @@ class ViewController: UIViewController {
     
     @objc func fireTimer() {
         currentTime -= 0.001
-        timerLabel.text = "00:\(correctTimeDisp(currentTime))"
+        timerLabel.text = correctTimeDisp(Double(currentTime))
         
-        if currentTime <= 0 && isWorkTime == true {
-            isWorkTime = false
+        guard currentTime <= 0 else { return }
+        
+        if  isWorkTime == true {
             currentTime = Double(relaxTime)
             setupItemsColor(color: relaxColor)
             progressLayer.strokeColor = relaxColor.cgColor
             progressAnimation(duration: TimeInterval(currentTime))
-        } else if currentTime <= 0 && isWorkTime == false {
-            isWorkTime = true
+        } else {
             currentTime = Double(workTime)
             setupItemsColor(color: workColor)
             progressLayer.strokeColor = workColor.cgColor
             progressAnimation(duration: TimeInterval(currentTime))
         }
+        
+        isWorkTime.toggle()
     }
 }
